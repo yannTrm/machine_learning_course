@@ -1,21 +1,3 @@
-<style>
-  /* Style for titles */
-  h1 {
-    text-align: center;
-    color: #336699; /* Change to your desired title color */
-  }
-
-  /* Style for section headers */
-  h2 {
-    color: #990000; /* Change to your desired section header color */
-  }
-
-  /* Style for regular text justification */
-  p {
-    text-align: justify;
-  }
-</style>
-
 # Introduction to Machine Learning
 
 Machine learning is a subfield of artificial intelligence (AI) that focuses on developing algorithms and models that enable computers to learn from data and make predictions or decisions without being explicitly programmed. It is a fundamental technology that powers a wide range of applications in various domains. In this introduction, we'll explore the basic concepts of machine learning.
