@@ -55,9 +55,9 @@ Supervised learning is a category of machine learning where a model is trained o
 The cost function is a measure of the error between the model's predictions and the actual values of the target variable. The objective of supervised learning is to minimize this cost function. Here are the cost function formulas for commonly used cases:
 
 ### For Regression:
-\[
+$$
 J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^2
-\]
+$$
 
 Where:
 - \(J(\theta)\) is the cost function.
@@ -66,15 +66,18 @@ Where:
 - \(y^{(i)}\) is the actual target value for example \(i\).
 
 ### For Classification:
-\[
+$$
 J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(h_{\theta}(x^{(i)})) + (1 - y^{(i)}) \log(1 - h_{\theta}(x^{(i)}))]
-\]
+$$
 
 Where:
 - \(J(\theta)\) is the cost function.
 - \(m\) is the number of training examples.
 - \(h_{\theta}(x^{(i)})\) is the model's prediction for example \(i\).
 - \(y^{(i)}\) is the actual target value for example \(i\).
+
+These cost functions evaluate the model's performance and guide the adjustment of theta parameters to minimize prediction errors. Ultimately, the goal of supervised learning is to create a model capable of making accurate predictions on new data based on provided features.
+
 
 These cost functions evaluate the model's performance and guide the adjustment of theta parameters to minimize prediction errors. Ultimately, the goal of supervised learning is to create a model capable of making accurate predictions on new data based on provided features.
 
