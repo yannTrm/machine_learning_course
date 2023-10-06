@@ -31,3 +31,47 @@ In machine learning, data is typically divided into two main components: feature
 5. **Deep Learning**: Deep learning is a subset of machine learning that focuses on deep neural networks with multiple layers. It has achieved remarkable success in tasks like image recognition, natural language processing, and more.
 
 Machine learning algorithms and techniques continue to evolve and have a profound impact on various industries. Understanding the fundamentals of machine learning is the first step towards harnessing its power for solving real-world problems.
+
+<!-- Introduction to Supervised Learning -->
+
+## Supervised Learning
+
+Supervised learning is a category of machine learning where a model is trained on a labeled dataset, where each data example is associated with features and a target variable. The goal of supervised learning is to learn a relationship between the features and the target variable to make accurate predictions on new, unlabeled data.
+
+### Components of Supervised Learning
+
+1. **Dataset**:
+   - **Features**: Features are the input variables of the model. They are represented as vectors and describe the data that the model will use for predictions. For example, in a real estate price prediction model, features might include the number of bedrooms, square footage, etc.
+
+   - **Target**: The target variable is the value that the model aims to predict. It can be continuous (in the case of regression) or categorical (in the case of classification). For instance, in the real estate price prediction model, the target variable would be the actual sale price.
+
+2. **Learning Algorithm**:
+   - A learning algorithm is a set of rules or mathematical methods that the model follows to learn the relationship between the features and the target variable. Examples of supervised learning algorithms include linear regression, logistic regression, support vector machines (SVM), decision trees, and more.
+
+3. **Theta Parameters**:
+   - The theta parameters, often denoted as θ, are the coefficients adjusted by the learning algorithm to minimize prediction errors. The goal is to find the optimal values of θ that allow the model to better fit the training data. In linear regression, for example, θ represents the regression coefficients.
+
+### Cost Function
+
+The cost function is a measure of the error between the model's predictions and the actual values of the target variable. The objective of supervised learning is to minimize this cost function. Here are the formulas for commonly used cost functions in supervised learning:
+
+1. **For Regression**:
+   - Mean Squared Error (MSE) is commonly used as the cost function for linear regression:
+     \[J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^2\]
+     Where:
+     - \(J(\theta)\) is the cost function.
+     - \(m\) is the number of training examples.
+     - \(h_{\theta}(x^{(i)})\) is the model's prediction for example \(i\).
+     - \(y^{(i)}\) is the actual target value for example \(i\).
+
+2. **For Classification**:
+   - Cross-Entropy Loss is commonly used as the cost function for binary or multiclass classification:
+     \[J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(h_{\theta}(x^{(i)})) + (1 - y^{(i)}) \log(1 - h_{\theta}(x^{(i)}))]\]
+     Where:
+     - \(J(\theta)\) is the cost function.
+     - \(m\) is the number of training examples.
+     - \(h_{\theta}(x^{(i)})\) is the model's prediction for example \(i\).
+     - \(y^{(i)}\) is the actual target value for example \(i\).
+
+These cost functions evaluate the model's performance and guide the adjustment of theta parameters to minimize prediction errors. Ultimately, the goal of supervised learning is to create a model capable of making accurate predictions on new data based on provided features.
+
