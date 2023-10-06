@@ -1,3 +1,21 @@
+<style>
+  /* Style for titles */
+  h1 {
+    text-align: center;
+    color: #336699; /* Change to your desired title color */
+  }
+
+  /* Style for section headers */
+  h2 {
+    color: #990000; /* Change to your desired section header color */
+  }
+
+  /* Style for regular text justification */
+  p {
+    text-align: justify;
+  }
+</style>
+
 # Introduction to Machine Learning
 
 Machine learning is a subfield of artificial intelligence (AI) that focuses on developing algorithms and models that enable computers to learn from data and make predictions or decisions without being explicitly programmed. It is a fundamental technology that powers a wide range of applications in various domains. In this introduction, we'll explore the basic concepts of machine learning.
@@ -12,14 +30,16 @@ In machine learning, data is typically divided into two main components: feature
 
 ## Types of Machine Learning
 
-Machine learning can be categorized into several types based on the learning process and the nature of the data:
-
 1. **Supervised Learning**: In supervised learning, the algorithm is trained on a labeled dataset, where each data point has both features and a corresponding target variable. The goal is to learn a mapping from features to the target variable. Supervised learning includes subcategories like:
+
    - **Regression**: Regression models predict continuous numerical values. Examples include predicting house prices or stock prices.
+
    - **Classification**: Classification models predict categorical labels or classes. Examples include spam email detection or image classification.
 
 2. **Unsupervised Learning**: Unsupervised learning deals with unlabeled data, where there is no target variable. The algorithm tries to discover patterns, relationships, or structures within the data. Unsupervised learning includes subcategories like:
+
    - **Clustering**: Clustering algorithms group similar data points together. K-Means clustering is a common example.
+
    - **Dimensionality Reduction**: Dimensionality reduction techniques aim to reduce the number of features while preserving important information, such as Principal Component Analysis (PCA).
 
 3. **Reinforcement Learning**: Reinforcement learning is concerned with training agents to interact with an environment and make sequential decisions. It involves learning a policy that maximizes a reward signal. Applications include game playing and autonomous control.
