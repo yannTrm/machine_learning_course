@@ -33,6 +33,33 @@ In machine learning, data is typically divided into two main components: feature
 Machine learning algorithms and techniques continue to evolve and have a profound impact on various industries. Understanding the fundamentals of machine learning is the first step towards harnessing its power for solving real-world problems.
 
 
+## Overfitting and Underfitting
+
+### Overfitting
+
+Overfitting occurs when a machine learning model is too complex and captures noise or random fluctuations in the training data, rather than the underlying patterns. As a result, the model performs well on the training data but poorly on new, unseen data. Overfitting is often associated with models that are excessively flexible or have too many parameters.
+
+**Example**: Imagine a polynomial regression model with a high-degree polynomial (e.g., degree 20) applied to a dataset with a simple linear relationship. The model might fit the training data perfectly but fail to generalize to new data.
+
+![Overfitting Example](URL_DE_L_IMAGE_OVERFITTING)
+
+### Underfitting
+
+Underfitting, on the other hand, occurs when a machine learning model is too simplistic to capture the underlying patterns in the data. It results in poor performance both on the training data and on new data. Underfitting is often associated with models that are too rigid or have too few parameters.
+
+**Example**: Consider a linear regression model applied to a dataset with a complex, nonlinear relationship. The linear model may not capture the nuances of the data, resulting in significant errors.
+
+![Underfitting Example](URL_DE_L_IMAGE_UNDERFITTING)
+
+### Balancing Act
+
+The goal in machine learning is to strike a balance between overfitting and underfitting. You want your model to be complex enough to capture the true underlying patterns in the data but not so complex that it fits noise.
+
+**Regularization techniques**, such as L1 and L2 regularization, can help prevent overfitting by penalizing overly complex models. Cross-validation is a common practice to detect and mitigate overfitting and underfitting by splitting the data into training and validation sets.
+
+In the following sections, we will dive deeper into supervised learning, a key area of machine learning, and explore techniques to build models that generalize well to new data.
+
+
 # Introduction to Supervised Learning
 
 Supervised learning is a category of machine learning where a model is trained on a labeled dataset, where each data example is associated with features and a target variable. The goal of supervised learning is to learn a relationship between the features and the target variable to make accurate predictions on new, unlabeled data.
