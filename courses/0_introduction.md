@@ -50,6 +50,8 @@ Underfitting, on the other hand, occurs when a machine learning model is too sim
 
 ![Example](img/under_over_fitting.png)
 
+![Example](img/over_curve.png)
+
 ### Balancing Act
 
 The goal in machine learning is to strike a balance between overfitting and underfitting. You want your model to be complex enough to capture the true underlying patterns in the data but not so complex that it fits noise.
