@@ -106,3 +106,65 @@ Where:
 
 These cost functions evaluate the model's performance and guide the adjustment of theta parameters to minimize prediction errors. Ultimately, the goal of supervised learning is to create a model capable of making accurate predictions on new data based on provided features.
 
+
+## Supervised Learning Algorithms
+
+### Regression Algorithms
+
+1. **Linear Regression**:
+   - *Advantages*:
+     - Simple and interpretable.
+     - Provides a baseline for regression tasks.
+   - *Disadvantages*:
+     - Assumes a linear relationship, which may not be suitable for complex data.
+   - *How it works*:
+     - Linear regression models the relationship between the target variable and the features by fitting a linear equation.
+     - It finds the best-fitting line (hyperplane) that minimizes the sum of squared errors between predicted and actual values.
+
+2. **Polynomial Regression**:
+   - *Advantages*:
+     - Can model nonlinear relationships effectively.
+     - Offers flexibility in fitting curves to data.
+   - *Disadvantages*:
+     - Susceptible to overfitting with high-degree polynomials.
+   - *How it works*:
+     - Polynomial regression extends linear regression by introducing polynomial terms (e.g., x^2, x^3) into the equation.
+     - It fits a polynomial curve to the data, allowing for more complex relationships.
+
+### Classification Algorithms
+
+1. **k-Nearest Neighbors (k-NN)**:
+   - *Advantages*:
+     - Easy to understand and implement.
+     - No assumptions about data distribution.
+   - *Disadvantages*:
+     - Sensitive to the choice of k.
+     - Can be computationally expensive for large datasets.
+   - *How it works*:
+     - For a given data point, k-NN identifies the k nearest data points (neighbors) based on a distance metric (e.g., Euclidean distance).
+     - The majority class among the k neighbors is assigned as the predicted class.
+
+2. **Naive Bayes Classifier**:
+   - *Advantages*:
+     - Fast and efficient, especially for text classification.
+     - Works well with high-dimensional data.
+   - *Disadvantages*:
+     - Assumes independence between features (may not hold in all cases).
+     - Requires a large amount of training data for accurate estimation.
+   - *How it works*:
+     - Naive Bayes uses Bayes' theorem to calculate the probability of a data point belonging to a certain class.
+     - It assumes that features are conditionally independent, making computations more tractable.
+
+3. **Decision Trees**:
+   - *Advantages*:
+     - Easy to visualize and interpret.
+     - Can handle both categorical and numerical features.
+   - *Disadvantages*:
+     - Prone to overfitting, especially with deep trees.
+     - Can be unstable; small variations in data may result in different trees.
+   - *How it works*:
+     - A decision tree recursively splits the feature space into regions based on feature values.
+     - It selects the best feature to split on at each node, aiming to maximize information gain or minimize impurity.
+
+These descriptions provide insights into the functioning of each supervised learning algorithm, along with their respective advantages and disadvantages. Further details and implementation specifics can be covered in subsequent lessons.
+
