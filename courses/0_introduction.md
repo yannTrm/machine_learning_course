@@ -41,7 +41,6 @@ Overfitting occurs when a machine learning model is too complex and captures noi
 
 **Example**: Imagine a polynomial regression model with a high-degree polynomial (e.g., degree 20) applied to a dataset with a simple linear relationship. The model might fit the training data perfectly but fail to generalize to new data.
 
-![Overfitting Example](URL_DE_L_IMAGE_OVERFITTING)
 
 ### Underfitting
 
@@ -49,7 +48,7 @@ Underfitting, on the other hand, occurs when a machine learning model is too sim
 
 **Example**: Consider a linear regression model applied to a dataset with a complex, nonlinear relationship. The linear model may not capture the nuances of the data, resulting in significant errors.
 
-![Underfitting Example](URL_DE_L_IMAGE_UNDERFITTING)
+![Example](img/under_over_fitting.png)
 
 ### Balancing Act
 
