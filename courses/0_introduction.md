@@ -57,7 +57,7 @@ The cost function is a measure of the error between the model's predictions and 
 
 1. **For Regression**:
    - Mean Squared Error (MSE) is commonly used as the cost function for linear regression:
-     \[J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^2\]
+    $$ \[J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^2\]$$
      Where:
      - \(J(\theta)\) is the cost function.
      - \(m\) is the number of training examples.
