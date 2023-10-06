@@ -60,7 +60,7 @@ J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})^2
 $$
 
 Where:
-- \(J(\theta)\) is the cost function.
+- $ (J(\theta)\)$ is the cost function.
 - \(m\) is the number of training examples.
 - \(h_{\theta}(x^{(i)})\) is the model's prediction for example \(i\).
 - \(y^{(i)}\) is the actual target value for example \(i\).
