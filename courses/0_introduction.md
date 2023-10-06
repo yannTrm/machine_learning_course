@@ -62,8 +62,8 @@ $$
 Where:
 - $J(\theta)$ is the cost function.
 - $m$ is the number of training examples.
-- $h_{\theta}(x^{(i)})$ is the model's prediction for example \(i\).
-- $y^{(i)}$ is the actual target value for example \(i\).
+- $h_{\theta}(x^{(i)})$ is the model's prediction for example $i$.
+- $y^{(i)}$ is the actual target value for example $i$.
 
 ### For Classification:
 $$
@@ -71,10 +71,10 @@ J(\theta) = -\frac{1}{m} \sum_{i=1}^{m} [y^{(i)} \log(h_{\theta}(x^{(i)})) + (1 
 $$
 
 Where:
-- \(J(\theta)\) is the cost function.
-- \(m\) is the number of training examples.
-- \(h_{\theta}(x^{(i)})\) is the model's prediction for example \(i\).
-- \(y^{(i)}\) is the actual target value for example \(i\).
+- $J(\theta)$ is the cost function.
+- $m$ is the number of training examples.
+- $h_{\theta}(x^{(i)})$ is the model's prediction for example $i$.
+- $y^{(i)}$ is the actual target value for example $i$.
 
 These cost functions evaluate the model's performance and guide the adjustment of theta parameters to minimize prediction errors. Ultimately, the goal of supervised learning is to create a model capable of making accurate predictions on new data based on provided features.
 
