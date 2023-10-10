@@ -440,3 +440,45 @@ Here are the main steps of the RMSprop algorithm:
 
 RMSprop is a valuable optimization algorithm, particularly for deep learning and neural network training, where adaptive learning rates can significantly improve convergence speed and stability.
 
+### Adam 🤖
+
+Adam (Adaptive Moment Estimation) is an optimization algorithm widely used in machine learning and deep learning to combine the benefits of both RMSprop and Momentum. It adapts the learning rates for each parameter and introduces the concept of momentum.
+
+🤖 **How It Works:**
+Adam aims to provide efficient and adaptive learning rates for each parameter while incorporating momentum to navigate cost landscapes effectively. It maintains two moving averages: the first moment (mean) of the gradients (like Momentum) and the second moment (uncentered variance) of the gradients (like RMSprop).
+
+Here are the main steps of the Adam algorithm:
+
+1. Initialize the model parameters with arbitrary values.
+
+2. Initialize variables for the first moment (denoted by $m$) and the second moment (denoted by $v$) of the gradients for each parameter to zero.
+
+3. Initialize a variable to keep track of the number of iterations (denoted by $t$) to correct for bias.
+
+4. For each iteration:
+   - Compute the gradient of the cost function with respect to the parameters:
+     $$\nabla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}$$
+   - Update the first moment estimates:
+     $$m := \beta_1 \cdot m + (1 - \beta_1) \cdot \nabla J(\theta)$$
+   - Update the second moment estimates:
+     $$v := \beta_2 \cdot v + (1 - \beta_2) \cdot (\nabla J(\theta))^2$$
+   - Correct the bias of the first and second moment estimates:
+     $$\hat{m} = \frac{m}{1 - \beta_1^t}, \quad \hat{v} = \frac{v}{1 - \beta_2^t}$$
+   - Update the parameters using the scaled gradients and a small step (learning rate, $\alpha$):
+     $$\theta := \theta - \frac{\alpha}{\sqrt{\hat{v} + \epsilon}} \cdot \hat{m}$$
+
+5. Repeat the iterations until convergence.
+
+🎉 **Advantages of Adam:**
+- Combines the benefits of adaptive learning rates (like RMSprop) and momentum.
+- Efficiently adapts learning rates for each parameter.
+- Provides stable and fast convergence on a wide range of problems.
+
+🚩 **Disadvantages of Adam:**
+- Requires tuning of hyperparameters, including $\beta_1$, $\beta_2$, and the small constant $\epsilon$.
+- May have occasional oscillations in the learning process due to the combination of momentum and adaptive learning rates.
+- Relatively complex compared to simpler optimization algorithms.
+
+Adam is a powerful optimization algorithm widely used in deep learning because of its efficiency and adaptability. It often leads to faster convergence and better performance on a variety of machine learning tasks.
+
+
