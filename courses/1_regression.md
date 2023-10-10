@@ -20,11 +20,6 @@
    - Adam 🤖
    - Comparison and advantages of each algorithm.
 
-3. Linear Regression with Regularization 🧐
-   - L1 (Lasso) and L2 (Ridge) Regularization 🧱
-   - Elastic Net 🕸️
-   - Hyperparameter tuning for regularization 🎛️
-   - Effects of regularization on model coefficients.
 
 ## Non-Linear Regression 📊
 4. Algorithms for Non-Linear Regression
