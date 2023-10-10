@@ -324,7 +324,57 @@ Here are the main steps of the Gradient Descent algorithm:
 
 4. Repeat steps 2 and 3 until convergence (i.e., the cost stops decreasing or decreases very slowly).
 
-Gradient Descent comes in different variants, including Batch Gradient Descent, Stochastic Gradient Descent, and Mini-Batch Gradient Descent, each with its characteristics and use cases.
+🎉 **Advantages of Gradient Descent:**
+- It is a versatile and widely applicable optimization algorithm used in various machine learning tasks.
+- Can find the global minimum of the cost function given sufficient iterations and a suitable learning rate.
+- Provides fine-grained control over the learning process through the learning rate parameter.
 
-Let's explore these variants and the detailed workings of Gradient Descent to gain a deeper understanding of this optimization algorithm.
+🚩 **Disadvantages of Gradient Descent:**
+- May converge slowly on large datasets due to computing the gradient using the entire dataset in each iteration (Batch Gradient Descent).
+- Sensitive to the choice of learning rate, which can lead to overshooting or slow convergence if not tuned correctly.
+- Prone to getting stuck in local minima for non-convex cost functions.
+
+Gradient Descent remains a fundamental optimization algorithm in machine learning, and understanding its advantages and disadvantages helps practitioners make informed choices when applying it to various problems.
+
+
+
+### Stochastic Gradient Descent (SGD) 🏃‍♂️
+
+Stochastic Gradient Descent (SGD) is a variant of the Gradient Descent algorithm, designed to optimize linear regression models and machine learning algorithms efficiently. It is particularly useful when dealing with large datasets.
+
+🏃‍♂️ **How It Works:**
+SGD shares the fundamental principles of Gradient Descent but differs in how it processes training data. Instead of using the entire training dataset to compute the gradient (as in Batch Gradient Descent), SGD randomly selects one training example at a time and updates the parameters based on that single example. This randomness introduces noise but can lead to faster convergence, especially for large datasets.
+
+Here are the main steps of the Stochastic Gradient Descent algorithm:
+
+1. Initialize the model parameters with arbitrary values.
+
+2. For each training example in a random order:
+   - Compute the gradient of the cost function with respect to the parameters using only the current training example:
+     $$
+     \nabla J(\theta) = (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}
+     $$
+   - Update the parameters using the computed gradient and a small step (learning rate, $\alpha$):
+     $$
+     \theta := \theta - \alpha \nabla J(\theta)
+     $$
+
+3. Repeat step 2 for a predefined number of iterations or until convergence.
+
+📝 **Explanation of SGD:**
+- SGD processes training examples one by one in a random order, which can lead to faster updates of model parameters compared to Batch Gradient Descent.
+- The use of a single training example introduces noise into the parameter updates, but this noise can help the algorithm escape local minima and explore the cost function more effectively.
+- The learning rate ($\alpha$) controls the step size in parameter updates and should be carefully chosen to ensure convergence without overshooting.
+
+💡 **Advantages of SGD:**
+- Well-suited for large datasets where computing the gradient using the entire dataset is computationally expensive.
+- Can converge faster than Batch Gradient Descent due to more frequent parameter updates.
+- Resilient to noisy data and can help escape local minima.
+
+🚩 **Disadvantages of SGD:**
+- The randomness introduced by using single examples can lead to erratic convergence behavior.
+- May require careful tuning of the learning rate ($\alpha$) to achieve convergence.
+- Not guaranteed to find the global minimum of the cost function due to its stochastic nature.
+
+SGD is especially valuable when dealing with large datasets and is widely used in training machine learning models, including linear regression. Understanding its advantages and disadvantages can help practitioners make informed choices when selecting optimization algorithms.
 
