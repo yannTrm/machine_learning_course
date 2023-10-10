@@ -67,6 +67,8 @@
 - Summary of key points 📌
 - Future perspectives for learning regression 🚀
 
+  
+
 ## Introduction to Regression 📊
 
 Regression analysis is a fundamental concept in the field of machine learning and statistics. It serves as a cornerstone for understanding and modeling relationships between variables. In this section, we will explore the basic concepts and significance of regression in the context of machine learning.
@@ -287,4 +289,16 @@ Here are a few examples:
      $$D(y, f(x)) = 2 \cdot (f(x) - y \cdot \log(f(x)))$$
 
 These are just a few examples of cost functions used in regression tasks. The choice of cost function depends on the specific characteristics of your data and the goals of your regression model. Each cost function comes with its advantages and trade-offs, allowing you to tailor your model to the problem at hand.
+
+
+
+
+### Optimization Algorithms 🚀
+
+In the world of machine learning and regression, finding the best-fitting model is often a task of optimization. Optimization algorithms play a crucial role in adjusting the model's parameters to minimize the chosen cost function. These algorithms iteratively update the model's parameters to find the optimal values that result in the lowest possible error.
+
+Let's delve into some of the key optimization algorithms used in linear regression and explore their characteristics, strengths, and use cases. Each of these algorithms contributes to the journey of training a regression model to reach its optimal performance. 🎯
+
+Now, let's dive into the details of each optimization algorithm!
+
 
