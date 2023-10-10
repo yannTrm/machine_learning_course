@@ -258,3 +258,38 @@ Here are a few examples:
 
 These are just a few examples of cost functions used in regression tasks. The choice of cost function depends on the specific characteristics of your data and the goals of your regression model. Each cost function comes with its advantages and trade-offs, allowing you to tailor your model to the problem at hand.
 
+
+
+
+
+
+
+### Other Relevant Cost Functions 📊
+
+In addition to Mean Squared Error (MSE) and Mean Absolute Error (MAE), there are several other cost functions commonly used in regression tasks. These cost functions serve different purposes and may be preferred based on specific characteristics of the dataset or the problem.
+
+Here are a few examples:
+
+1. **Huber Loss** 🎯
+   - Huber loss is a combination of MSE and MAE. It is less sensitive to outliers than MSE but provides a balance between the two.
+   - Formula: \(L_{\delta}(y, f(x)) = \begin{cases}
+     \frac{1}{2}(y - f(x))^2, & \text{if } |y - f(x)| \leq \delta \\
+     \delta |y - f(x)| - \frac{1}{2}\delta^2, & \text{otherwise}
+   \end{cases}\)
+
+2. **Quantile Loss** 📈
+   - Quantile loss is used for quantile regression, which allows modeling different quantiles of the target variable's distribution.
+   - Formula: \(Q_{\tau}(y, f(x)) = \begin{cases}
+     \tau(y - f(x)), & \text{if } y - f(x) \geq 0 \\
+     (1 - \tau)(f(x) - y), & \text{otherwise}
+   \end{cases}\)
+
+3. **Log-Cosh Loss** 📉
+   - Log-Cosh loss is a smooth approximation of the Huber loss and is less sensitive to outliers than MSE.
+   - Formula: \(L_{\text{Log-Cosh}}(y, f(x)) = \log(\cosh(f(x) - y))\)
+
+4. **Poisson Deviance Loss** 🐟
+   - Poisson deviance loss is used in Poisson regression when dealing with count data. It models the log-likelihood of the Poisson distribution.
+   - Formula: \(D(y, f(x)) = 2 \cdot (f(x) - y \cdot \log(f(x)))\)
+
+These are just a few examples of cost functions used in regression tasks. The choice of cost function depends on the specific characteristics of your data and the goals of your regression model. Each cost function comes with its advantages and trade-offs, allowing you to tailor your model to the problem at hand.
