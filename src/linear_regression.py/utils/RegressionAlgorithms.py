@@ -244,9 +244,9 @@ num_iterations = 1000
 theta_gd = RegressionAlgorithms.gradient_descent(X, y, theta_initial, learning_rate, num_iterations)
 
 # Utiliser scikit-learn pour comparer
-model = LinearRegression()
+model = LinearRegression(fit_intercept=False)
 model.fit(X, y)
-theta_sklearn = np.concatenate((model.intercept_, model.coef_.flatten()))
+theta_sklearn = model.coef_.T
 
 
 # Calculer les prédictions
@@ -260,6 +260,7 @@ print("Prédictions avec Gradient Descent personnalisé:")
 print(y_predict_gd)
 print("Prédictions avec scikit-learn:")
 print(y_predict_sklearn)
+
 
 # Calculer l'erreur MSE
 mse_gd = mean_squared_error(y, X.dot(theta_gd))
