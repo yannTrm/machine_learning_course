@@ -351,9 +351,7 @@ Here are the main steps of the Stochastic Gradient Descent algorithm:
 
 2. For each training example in a random order:
    - Compute the gradient of the cost function with respect to the parameters using only the current training example:
-     $$
-     \nabla J(\theta) = (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}
-     $$
+     $$\nabla J(\theta) = (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}$$
    - Update the parameters using the computed gradient and a small step (learning rate, $\alpha$):
      $$
      \theta := \theta - \alpha \nabla J(\theta)
