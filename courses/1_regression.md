@@ -370,3 +370,7 @@ Here are the main steps of the Stochastic Gradient Descent algorithm:
 
 SGD is especially valuable when dealing with large datasets and is widely used in training machine learning models, including linear regression. Understanding its advantages and disadvantages can help practitioners make informed choices when selecting optimization algorithms.
 
+
+
+
+$$Q_{\tau}(y, f(x)) = \begin{cases} \tau(y - f(x)), &  \ (1 - \tau)(f(x) - y), & \end{cases}$$
