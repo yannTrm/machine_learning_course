@@ -779,6 +779,8 @@ Where:
 
 This custom cost function adapts to the non-linear nature of the temperature prediction problem.
 
+In the next section, we will explore "Advanced Techniques in Non-Linear Regression." If you have specific questions or examples related to cost functions in non-linear regression or if you'd like to delve deeper into practical examples, please let me know.
+
 
 ### Upcoming Content 🚀
 
@@ -787,5 +789,5 @@ I am continuously working to bring you more valuable content on machine learning
 Stay tuned for the upcoming release, and thank you for being part of our learning journey!
 
 
-In the next section, we will explore "Advanced Techniques in Non-Linear Regression." If you have specific questions or examples related to cost functions in non-linear regression or if you'd like to delve deeper into practical examples, please let me know.
+
 
