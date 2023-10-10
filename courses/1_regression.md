@@ -186,41 +186,42 @@ The Root Mean Squared Error (RMSE) is a variation of the Mean Squared Error (MSE
 
 The RMSE formula for linear regression is as follows:
 
-```math
-RMSE = sqrt((1/m) * Σ(y^(i) - h_θ(x^(i)))^2)
-```
+$$
+RMSE = \sqrt{\frac{1}{m} \sum_{i=1}^{m} (y^{(i)} - h_{\theta}(x^{(i)}))^2}
+$$
 
 Where:
-- `m` is the number of training examples.
-- `y^(i)` is the actual target value for the `i`-th example.
-- `h_θ(x^(i))` is the predicted value for the `i`-th example using the linear regression model with parameters `θ`.
+- $m$ is the number of training examples.
+- $y^{(i)}$ is the actual target value for the $i$-th example.
+- $h_{\theta}(x^{(i)})$ is the predicted value for the $i$-th example using the linear regression model with parameters $\theta$.
 
-#### Explanation of the RMSE Formula:
+**Explanation of the RMSE Formula:**
 
-1. For each training example `i`, calculate the difference between the actual target value `y^(i)` and the predicted value `h_θ(x^(i))`. This difference represents the error in the prediction for that example.
+1. For each training example $i$, calculate the difference between the actual target value $y^{(i)}$ and the predicted value $h_{\theta}(x^{(i)})$. This difference represents the error in the prediction for that example.
 
 2. Square the error for each example.
 
 3. Sum up the squared errors for all training examples.
 
-4. Divide the sum of squared errors by the number of training examples `m`.
+4. Divide the sum of squared errors by the number of training examples $m$.
 
 5. Take the square root of the result to calculate the RMSE.
 
 The RMSE provides a measure of the typical magnitude of error in the model's predictions. It is sensitive to outliers and penalizes large errors more significantly than the MAE.
 
-#### Matrix Form of RMSE:
+**Matrix Form of RMSE:**
 
 In matrix form, the RMSE can be expressed as follows:
 
-```math
-RMSE = sqrt((1/m) * (Y - Xθ)^T * (Y - Xθ))
-```
+$$
+RMSE = \sqrt{\frac{1}{m} (Y - X\theta)^T (Y - X\theta)}
+$$
 
 Where:
-- `Y` is the column vector of actual target values.
-- `X` is the matrix of input features with each row representing an example.
-- `θ` is the column vector of model parameters.
+- $Y$ is the column vector of actual target values.
+- $X$ is the matrix of input features with each row representing an example.
+- $\theta$ is the column vector of model parameters.
 
 The RMSE is a commonly used metric for assessing the accuracy of regression models.
+
 
