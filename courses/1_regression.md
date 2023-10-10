@@ -405,3 +405,38 @@ Here are the main steps of the Momentum algorithm:
 
 Momentum is a valuable optimization algorithm that addresses some of the convergence challenges faced by Gradient Descent. By accumulating momentum, it can navigate complex cost landscapes more efficiently and converge faster.
 
+### RMSprop 🚀
+
+RMSprop (Root Mean Square Propagation) is an optimization algorithm commonly used in machine learning and deep learning to adaptively adjust the learning rates for each parameter, helping improve the convergence speed and stability.
+
+🚀 **How It Works:**
+RMSprop is designed to address the challenges of Gradient Descent, particularly when dealing with problems where the gradients of different parameters have different scales. The key idea is to adaptively scale the learning rates for each parameter based on the historical information about the gradients.
+
+Here are the main steps of the RMSprop algorithm:
+
+1. Initialize the model parameters with arbitrary values.
+
+2. Initialize a variable called "moving average of squared gradients" (denoted by $s$) for each parameter to zero.
+
+3. For each iteration:
+   - Compute the gradient of the cost function with respect to the parameters:
+     $$\nabla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}$$
+   - Update the "moving average of squared gradients" for each parameter:
+     $$s := \beta \cdot s + (1 - \beta) \cdot (\nabla J(\theta))^2$$
+   - Update the parameters using the scaled gradients and a small step (learning rate, $\alpha$):
+     $$\theta := \theta - \frac{\alpha}{\sqrt{s + \epsilon}} \cdot \nabla J(\theta)$$
+
+4. Repeat the iterations until convergence.
+
+📊 **Advantages of RMSprop:**
+- Adaptive learning rates help overcome the challenge of varying gradient scales.
+- Converges faster and more reliably than standard Gradient Descent on many problems.
+- Helps stabilize and smoothen the optimization process.
+
+🚩 **Disadvantages of RMSprop:**
+- Requires tuning of the hyperparameter $\beta$ and the small constant $\epsilon$.
+- May still require careful learning rate tuning ($\alpha$) in some cases.
+- Can accumulate historical squared gradients, which might lead to slow convergence in some situations.
+
+RMSprop is a valuable optimization algorithm, particularly for deep learning and neural network training, where adaptive learning rates can significantly improve convergence speed and stability.
+
