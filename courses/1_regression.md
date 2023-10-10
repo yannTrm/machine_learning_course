@@ -301,4 +301,30 @@ Let's delve into some of the key optimization algorithms used in linear regressi
 
 Now, let's dive into the details of each optimization algorithm!
 
+### Gradient Descent 🌄
+
+Gradient Descent is a fundamental optimization algorithm widely used in machine learning and linear regression. Its primary purpose is to find the optimal values of the model's parameters (coefficients) by minimizing the chosen cost function.
+
+🌄 **How It Works:**
+Gradient Descent operates by iteratively adjusting the model's parameters in the direction that reduces the cost function. The key idea is to compute the gradient (derivative) of the cost function with respect to the model parameters. This gradient points in the direction of the steepest increase in the cost, so moving in the opposite direction will reduce the cost.
+
+Here are the main steps of the Gradient Descent algorithm:
+
+1. Initialize the model parameters with arbitrary values.
+
+2. Compute the gradient of the cost function with respect to the parameters:
+   $$
+   \nabla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}
+   $$
+
+3. Update the parameters by taking a small step (learning rate, $\alpha$) in the direction of the negative gradient:
+   $$
+   \theta := \theta - \alpha \nabla J(\theta)
+   $$
+
+4. Repeat steps 2 and 3 until convergence (i.e., the cost stops decreasing or decreases very slowly).
+
+Gradient Descent comes in different variants, including Batch Gradient Descent, Stochastic Gradient Descent, and Mini-Batch Gradient Descent, each with its characteristics and use cases.
+
+Let's explore these variants and the detailed workings of Gradient Descent to gain a deeper understanding of this optimization algorithm.
 
