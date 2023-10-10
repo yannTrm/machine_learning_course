@@ -313,14 +313,10 @@ Here are the main steps of the Gradient Descent algorithm:
 1. Initialize the model parameters with arbitrary values.
 
 2. Compute the gradient of the cost function with respect to the parameters:
-   $$
-   \nabla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}
-   $$
+   $$\nabla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}$$
 
 3. Update the parameters by taking a small step (learning rate, $\alpha$) in the direction of the negative gradient:
-   $$
-   \theta := \theta - \alpha \nabla J(\theta)
-   $$
+   $$\theta := \theta - \alpha \nabla J(\theta)$$
 
 4. Repeat steps 2 and 3 until convergence (i.e., the cost stops decreasing or decreases very slowly).
 
@@ -353,9 +349,7 @@ Here are the main steps of the Stochastic Gradient Descent algorithm:
    - Compute the gradient of the cost function with respect to the parameters using only the current training example:
      $$\nabla J(\theta) = (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}$$
    - Update the parameters using the computed gradient and a small step (learning rate, $\alpha$):
-     $$
-     \theta := \theta - \alpha \nabla J(\theta)
-     $$
+     $$\theta := \theta - \alpha \nabla J(\theta)$$
 
 3. Repeat step 2 for a predefined number of iterations or until convergence.
 
