@@ -21,7 +21,7 @@ class RegressionAlgorithms:
     """
 
     @staticmethod
-    def gradient_descent(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float, num_iterations: int) -> np.ndarray:
+    def gradient_descent(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float = 0.01, num_iterations: int = 100) -> np.ndarray:
         """
         Perform linear regression using Gradient Descent.
 
@@ -53,7 +53,7 @@ class RegressionAlgorithms:
         return theta
 
     @staticmethod
-    def stochastic_gradient_descent(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float, num_iterations: int) -> np.ndarray:
+    def stochastic_gradient_descent(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float = 0.01, num_iterations: int = 100) -> np.ndarray:
         """
         Perform linear regression using Stochastic Gradient Descent (SGD).
 
@@ -91,7 +91,7 @@ class RegressionAlgorithms:
         return theta
 
     @staticmethod
-    def momentum(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float, num_iterations: int, momentum_factor: float = 0.9) -> np.ndarray:
+    def momentum(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float = 0.01, num_iterations: int = 100, momentum_factor: float = 0.9) -> np.ndarray:
         """
         Perform linear regression using Momentum.
 
@@ -128,7 +128,7 @@ class RegressionAlgorithms:
         return theta
 
     @staticmethod
-    def rmsprop(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float, num_iterations: int, decay_factor: float = 0.9) -> np.ndarray:
+    def rmsprop(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float = 0.01, num_iterations: int = 100, decay_factor: float = 0.9) -> np.ndarray:
         """
         Perform linear regression using RMSprop.
 
@@ -166,7 +166,7 @@ class RegressionAlgorithms:
         return theta
 
     @staticmethod
-    def adam(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float, num_iterations: int, beta1: float = 0.9, beta2: float = 0.999, epsilon: float = 1e-8) -> np.ndarray:
+    def adam(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float = 0.01, num_iterations: int = 100, beta1: float = 0.9, beta2: float = 0.999, epsilon: float = 1e-8) -> np.ndarray:
         """
         Perform linear regression using the Adam optimizer.
 
@@ -218,52 +218,3 @@ class RegressionAlgorithms:
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
-
-
-
-
-
-
-from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
-
-
-# Générer des données aléatoires
-np.random.seed(0)
-x = 2 * np.random.rand(100, 1)
-y = 4 + 3 * x + np.random.randn(100, 1)
-
-X = np.concatenate((x,np.ones((x.shape[0], 1))), axis = 1)
-
-# Initialiser les paramètres
-theta_initial = np.random.randn(2, 1)  # theta0 et theta1
-
-# Utiliser l'algorithme de Gradient Descent personnalisé
-learning_rate = 0.1
-num_iterations = 1000
-theta_gd = RegressionAlgorithms.gradient_descent(X, y, theta_initial, learning_rate, num_iterations)
-
-# Utiliser scikit-learn pour comparer
-model = LinearRegression(fit_intercept=False)
-model.fit(X, y)
-theta_sklearn = model.coef_.T
-
-
-# Calculer les prédictions
-X_new = np.array([[0], [2]])
-X_new_b = np.c_[np.ones((2, 1)), X_new]  # Ajouter x0 = 1 à chaque instance
-y_predict_gd = X_new_b.dot(theta_gd)
-y_predict_sklearn = X_new_b.dot(theta_sklearn)
-
-# Comparer les prédictions
-print("Prédictions avec Gradient Descent personnalisé:")
-print(y_predict_gd)
-print("Prédictions avec scikit-learn:")
-print(y_predict_sklearn)
-
-
-# Calculer l'erreur MSE
-mse_gd = mean_squared_error(y, X.dot(theta_gd))
-mse_sklearn = mean_squared_error(y, X.dot(theta_sklearn))
-print("MSE avec Gradient Descent personnalisé:", mse_gd)
-print("MSE avec scikit-learn:", mse_sklearn)
