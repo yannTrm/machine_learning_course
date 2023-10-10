@@ -224,6 +224,36 @@ Where:
 
 The RMSE is a commonly used metric for assessing the accuracy of regression models.
 
+### Mean Absolute Percentage Error (MAPE) 📈
+
+The Mean Absolute Percentage Error (MAPE) is a commonly used metric for evaluating the accuracy of regression models, especially in cases where the scale of the target variable varies significantly.
+
+The MAPE formula for regression is as follows:
+
+$$
+MAPE = \frac{1}{m} \sum_{i=1}^{m} \left|\frac{y^{(i)} - h_{\theta}(x^{(i)})}{y^{(i)}}\right| \times 100
+$$
+
+Where:
+- $m$ is the number of training examples.
+- $y^{(i)}$ is the actual target value for the $i$-th example.
+- $h_{\theta}(x^{(i)})$ is the predicted value for the $i$-th example using the linear regression model with parameters $\theta$.
+
+**Explanation of the MAPE Formula:**
+
+1. For each training example $i$, calculate the absolute percentage difference between the actual target value $y^{(i)}$ and the predicted value $h_{\theta}(x^{(i)})$. This measures the relative error as a percentage of the actual value.
+
+2. Sum up the absolute percentage differences for all training examples.
+
+3. Divide the sum of absolute percentage differences by the number of training examples $m$.
+
+4. Multiply the result by 100 to express the error as a percentage.
+
+MAPE provides a percentage-based measure of the average absolute error in the model's predictions compared to the true values. It is particularly useful when you want to understand the percentage error in your predictions, which can be more interpretable in certain contexts.
+
+Including MAPE in your evaluation metrics can provide valuable insights into the performance of your regression model.
+
+
 ### Other Relevant Cost Functions 📊
 
 In addition to Mean Squared Error (MSE) and Mean Absolute Error (MAE), there are several other cost functions commonly used in regression tasks. These cost functions serve different purposes and may be preferred based on specific characteristics of the dataset or the problem.
