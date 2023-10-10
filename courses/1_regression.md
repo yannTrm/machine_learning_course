@@ -141,8 +141,8 @@ The matrix form allows for more efficient computation when working with large da
 
 Let's consider a simple example with two training examples:
 
-- $Y = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$
-- $X = \begin{bmatrix} 1 & 3 \\ 1 & 5 \end{bmatrix}$
+- $Y = \begin{bmatrix} 2 \\\ 4 \end{bmatrix}$
+- $X = \begin{bmatrix} 1 & 3 \\\ 1 & 5 \end{bmatrix}$
 - $\theta = \begin{bmatrix} \theta_0 \\ \theta_1 \end{bmatrix} = \begin{bmatrix} 1 \\ 0.5 \end{bmatrix}$
 
 Using the matrix form of MSE, we can calculate the cost as follows:
