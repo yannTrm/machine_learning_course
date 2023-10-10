@@ -741,3 +741,43 @@ These are just a few examples of the many non-linear regression models available
 
 In the following sections, we will delve into more advanced topics related to non-linear regression. If you have specific questions or examples related to any of these non-linear models, please let me know, and we can explore them further.
 
+
+### Cost Functions in Non-Linear Regression 📝
+
+In non-linear regression, as in linear regression, cost functions play a crucial role in assessing the model's performance and guiding optimization algorithms. However, adapting cost functions for non-linear models can be more complex due to the non-linear nature of the relationships being modeled. In this section, we will explore how cost functions are adapted for non-linear regression and provide practical examples.
+
+#### Adapting Cost Functions for Non-Linear Regression
+
+When working with non-linear regression models, the choice of an appropriate cost function is essential. Unlike linear regression, where Mean Squared Error (MSE) is commonly used, non-linear regression may require custom cost functions tailored to the specific problem. These cost functions should reflect the nature of the non-linear relationship between the input features and the target variable.
+
+Some commonly used cost functions in non-linear regression include:
+
+- **Mean Squared Error (MSE):** Similar to linear regression, MSE can be used when the non-linear model aims to minimize the squared difference between predicted and actual values.
+
+- **Mean Absolute Error (MAE):** MAE can be used when the distribution of errors is not normal or when outliers have a significant impact on the model.
+
+- **Custom Loss Functions:** In many cases, non-linear regression models require custom loss functions that capture the specific nature of the problem. These loss functions may be based on domain knowledge or mathematical insights.
+
+#### Practical Examples
+
+To illustrate the adaptation of cost functions for non-linear regression, let's consider an example:
+
+**Example: Temperature Prediction**
+
+Suppose you are building a non-linear regression model to predict daily temperatures based on historical data. The relationship between temperature and time of day may not be linear, and you want to adapt the cost function accordingly.
+
+In this case, you could define a custom cost function that penalizes errors differently during different times of the day. For instance, errors during nighttime might be penalized more heavily than errors during the day.
+
+$$
+\text{Custom Cost Function} = \sum_{i=1}^{n} w_i(y_i - \hat{y}_i)^2
+$$
+
+Where:
+- $w_i$ is a weight assigned to each data point based on the time of day.
+- $y_i$ is the actual temperature.
+- $\hat{y}_i$ is the predicted temperature.
+
+This custom cost function adapts to the non-linear nature of the temperature prediction problem.
+
+In the next section, we will explore "Advanced Techniques in Non-Linear Regression." If you have specific questions or examples related to cost functions in non-linear regression or if you'd like to delve deeper into practical examples, please let me know.
+
