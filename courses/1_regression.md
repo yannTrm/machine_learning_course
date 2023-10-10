@@ -570,3 +570,35 @@ In the following subsections, we will delve into specific types of non-linear re
 
 Let's explore these types of non-linear regression models and how to use them effectively.
 
+### Polynomial Models 📈
+
+Polynomial regression is a type of non-linear regression used to model relationships where the target variable is related to the input features through polynomial functions. In this section, we will explore polynomial regression in depth, including its mathematical formulation and practical applications.
+
+#### Mathematical Formulation
+
+The polynomial regression model can be expressed as follows:
+
+$$
+y = \beta_0 + \beta_1x + \beta_2x^2 + \ldots + \beta_nx^n + \epsilon
+$$
+
+Where:
+- $y$ is the target variable.
+- $x$ is the input feature.
+- $\beta_0, \beta_1, \beta_2, \ldots, \beta_n$ are the coefficients of the polynomial terms.
+- $n$ is the degree of the polynomial.
+- $\epsilon$ represents the error term.
+
+#### Applications
+
+Polynomial regression is used in various fields, including:
+
+- **Curve Fitting:** When the relationship between variables is curvilinear.
+- **Physics:** Modeling physical phenomena with non-linear behavior.
+- **Economics:** Analyzing economic data with complex relationships.
+- **Biology:** Modeling growth curves and biological processes.
+- **Engineering:** Predicting non-linear responses in engineering systems.
+
+In the next section, we will explore "Exponential and Logarithmic Models" in non-linear regression. If you have any questions or specific examples you'd like to discuss regarding polynomial regression, please let me know, and we can dive deeper into those topics.
+
+
