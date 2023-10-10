@@ -370,7 +370,38 @@ Here are the main steps of the Stochastic Gradient Descent algorithm:
 
 SGD is especially valuable when dealing with large datasets and is widely used in training machine learning models, including linear regression. Understanding its advantages and disadvantages can help practitioners make informed choices when selecting optimization algorithms.
 
+### Momentum 🏃‍♂️
 
+Momentum is an optimization algorithm used in machine learning and linear regression to accelerate convergence and overcome some of the limitations of traditional Gradient Descent.
 
+🏃‍♂️ **How It Works:**
+Momentum builds on the concept of Gradient Descent by introducing the idea of momentum, which helps the algorithm navigate through areas with shallow gradients and accelerates descent into areas with steeper gradients. The key idea is to accumulate a momentum term based on the gradients from previous iterations.
 
-$$Q_{\tau}(y, f(x)) = \begin{cases} \tau(y - f(x)), &  \ (1 - \tau)(f(x) - y), & \end{cases}$$
+Here are the main steps of the Momentum algorithm:
+
+1. Initialize the model parameters with arbitrary values.
+
+2. Initialize a variable called "velocity" to zero for each parameter.
+
+3. For each iteration:
+   - Compute the gradient of the cost function with respect to the parameters:
+     $$\nabla J(\theta) = \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}$$
+   - Update the velocity:
+     $$\text{velocity} := \beta \cdot \text{velocity} + (1 - \beta) \cdot \nabla J(\theta)$$
+   - Update the parameters using the velocity and a small step (learning rate, $\alpha$):
+     $$\theta := \theta - \alpha \cdot \text{velocity}$$
+
+4. Repeat the iterations until convergence.
+
+💨 **Advantages of Momentum:**
+- Accelerates convergence, especially in regions with high curvature or shallow gradients.
+- Helps escape local minima and plateaus by accumulating momentum over iterations.
+- Provides smoother and more stable updates compared to standard Gradient Descent.
+
+🚩 **Disadvantages of Momentum:**
+- Requires an additional hyperparameter, $\beta$, to control the momentum term.
+- May overshoot the minimum when gradients change direction rapidly, although this is less likely than with standard Gradient Descent.
+- Sensitive to the choice of learning rate ($\alpha$) and momentum parameter ($\beta$).
+
+Momentum is a valuable optimization algorithm that addresses some of the convergence challenges faced by Gradient Descent. By accumulating momentum, it can navigate complex cost landscapes more efficiently and converge faster.
+
