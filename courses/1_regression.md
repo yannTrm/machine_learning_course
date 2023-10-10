@@ -137,16 +137,5 @@ Where:
 
 The matrix form allows for more efficient computation when working with large datasets.
 
-#### Example Using Matrix Form:
 
-Let's consider a simple example with two training examples:
-
-- $$Y = \begin{bmatrix} 2 \\\ 4 \end{bmatrix}$$
-- $X = \begin{bmatrix} 1 & 3 \\\ 1 & 5 \end{bmatrix}$
-- $\theta = \begin{bmatrix} \theta_0 \\ \theta_1 \end{bmatrix} = \begin{bmatrix} 1 \\ 0.5 \end{bmatrix}$
-
-Using the matrix form of MSE, we can calculate the cost as follows:
-
-$$
-MSE = \frac{1}{2} \left( \begin{bmatrix} 2 \\ 4 \end{bmatrix} - \begin{bmatrix} 1 & 3 \\ 1 & 5 \end{bmatrix} \begin{bmatrix} 1 \\ 0.5 \end{bmatrix} \right)^T \left( \begin{bmatrix} 2 \\ 4 \end{bmatrix} - \begin{bmatrix} 1 & 3 \\ 1 & 5 \end{bmatrix} \begin{bmatrix} 1 \\ 0.5 \end{bmatrix} \right)
 
