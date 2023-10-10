@@ -122,7 +122,31 @@ Where:
 
 Minimizing the MSE during the training process is equivalent to finding the parameters $\theta$ that result in the best linear fit to the data.
 
-Next, we will explore other cost functions used in linear regression, such as the Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+#### Matrix Form of MSE:
 
+In matrix form, the MSE can be expressed as follows:
 
-Whether you are a data scientist, machine learning engineer, business analyst, or researcher, a solid understanding of regression is essential for your toolkit. In this course, we will explore the intricacies of linear and non-linear regression, various cost functions, optimization techniques, and regularization methods, providing you with a comprehensive foundation to apply regression effectively in your projects and analyses.
+$$
+MSE = \frac{1}{m} (Y - X\theta)^T (Y - X\theta)
+$$
+
+Where:
+- $Y$ is the column vector of actual target values.
+- $X$ is the matrix of input features with each row representing an example.
+- $\theta$ is the column vector of model parameters.
+
+The matrix form allows for more efficient computation when working with large datasets.
+
+#### Example Using Matrix Form:
+
+Let's consider a simple example with two training examples:
+
+- $Y = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$
+- $X = \begin{bmatrix} 1 & 3 \\ 1 & 5 \end{bmatrix}$
+- $\theta = \begin{bmatrix} \theta_0 \\ \theta_1 \end{bmatrix} = \begin{bmatrix} 1 \\ 0.5 \end{bmatrix}$
+
+Using the matrix form of MSE, we can calculate the cost as follows:
+
+$$
+MSE = \frac{1}{2} \left( \begin{bmatrix} 2 \\ 4 \end{bmatrix} - \begin{bmatrix} 1 & 3 \\ 1 & 5 \end{bmatrix} \begin{bmatrix} 1 \\ 0.5 \end{bmatrix} \right)^T \left( \begin{bmatrix} 2 \\ 4 \end{bmatrix} - \begin{bmatrix} 1 & 3 \\ 1 & 5 \end{bmatrix} \begin{bmatrix} 1 \\ 0.5 \end{bmatrix} \right)
+
