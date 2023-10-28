@@ -35,7 +35,7 @@ class RegressionAlgorithms:
         Returns:
             np.ndarray: Learned parameters (theta).
         """
-        m, n = X.shape  # Number of training examples and features
+        m, _ = X.shape  # Number of training examples and features
 
         for _ in range(num_iterations):
             # Compute predictions
@@ -67,7 +67,7 @@ class RegressionAlgorithms:
         Returns:
             np.ndarray: Learned parameters (theta).
         """
-        m, n = X.shape  # Number of training examples and features
+        m, _ = X.shape  # Number of training examples and features
 
         for _ in range(num_iterations):
             for i in range(m):
@@ -106,7 +106,7 @@ class RegressionAlgorithms:
         Returns:
             np.ndarray: Learned parameters (theta).
         """
-        m, n = X.shape  # Number of training examples and features
+        m, _ = X.shape  # Number of training examples and features
         velocity = np.zeros_like(theta)  # Initialize velocity
 
         for _ in range(num_iterations):
@@ -143,7 +143,7 @@ class RegressionAlgorithms:
         Returns:
             np.ndarray: Learned parameters (theta).
         """
-        m, n = X.shape  # Number of training examples and features
+        m, _ = X.shape  # Number of training examples and features
         epsilon = 1e-8  # Small constant to prevent division by zero
         cache = np.zeros_like(theta)  # Initialize cache
 
@@ -183,7 +183,7 @@ class RegressionAlgorithms:
         Returns:
             np.ndarray: Learned parameters (theta).
         """
-        m, n = X.shape  # Number of training examples and features
+        m, _ = X.shape  # Number of training examples and features
         moment1 = np.zeros_like(theta)  # Initialize first moment estimate
         moment2 = np.zeros_like(theta)  # Initialize second moment estimate
         t = 0  # Initialize time step

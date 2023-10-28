@@ -14,16 +14,16 @@ from src.linear_regression.utils.regression_algorithms import RegressionAlgorith
 #------------------------------------------------------------------------------
 
 # Générer des données aléatoires
-np.random.seed(0)
-X = 2 * np.random.rand(100, 1)
-y = 4 + 3 * X + np.random.randn(100, 1)
+# np.random.seed(0)
+a = np.random.uniform(-10, 10)
+b = np.random.uniform(-10, 10)
 
-# Initialiser les paramètres
-theta_initial = np.random.randn(2, 1)  # theta0 et theta1
+X = 2 * np.random.rand(100, 1)
+y = b + a * X + np.random.randn(100, 1)
 
 # Utiliser l'algorithme de Gradient Descent personnalisé
 lr_custom = LinearRegression()
-lr_custom.fit(X, y, RegressionAlgorithms.gradient_descent, learning_rate=0.1, num_iterations=1000)
+lr_custom.fit(X, y, RegressionAlgorithms.adam, learning_rate=0.1, num_iterations=500)
 
 # Utiliser scikit-learn pour comparer
 lr_sklearn = skLinearRegression()
