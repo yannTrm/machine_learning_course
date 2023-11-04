@@ -29,6 +29,12 @@ class CostFunctions:
     """
 
     @staticmethod
+    def check_shape(y_true: np.ndarray, y_pred: np.ndarray):
+        if y_true.shape != y_pred.shape:
+            raise ValueError("Input arrays y_true and y_pred must have the same shape.")
+
+
+    @staticmethod
     def mse(y_true: np.ndarray, y_pred: np.ndarray) -> float:
         """
         Calculate the Mean Squared Error (MSE) between true and predicted values.
@@ -40,9 +46,7 @@ class CostFunctions:
         Returns:
             float: The computed MSE.
         """
-        if y_true.shape != y_pred.shape:
-            raise ValueError("Input arrays y_true and y_pred must have the same shape.")
-
+        CostFunctions.check_shape(y_true, y_pred)
         return np.mean((y_true - y_pred) ** 2)
 
     @staticmethod
@@ -57,9 +61,7 @@ class CostFunctions:
         Returns:
             float: The computed MAE.
         """
-        if y_true.shape != y_pred.shape:
-            raise ValueError("Input arrays y_true and y_pred must have the same shape.")
-
+        CostFunctions.check_shape(y_true, y_pred)
         return np.mean(np.abs(y_true - y_pred))
 
     @staticmethod
@@ -74,9 +76,7 @@ class CostFunctions:
         Returns:
             float: The computed RMSE.
         """
-        if y_true.shape != y_pred.shape:
-            raise ValueError("Input arrays y_true and y_pred must have the same shape.")
-
+        CostFunctions.check_shape(y_true, y_pred)
         return np.sqrt(np.mean((y_true - y_pred) ** 2))
 
     @staticmethod
@@ -91,9 +91,7 @@ class CostFunctions:
         Returns:
             float: The computed MAPE.
         """
-        if y_true.shape != y_pred.shape:
-            raise ValueError("Input arrays y_true and y_pred must have the same shape.")
-
+        CostFunctions.check_shape(y_true, y_pred)
         return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
 
 
