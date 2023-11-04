@@ -228,7 +228,7 @@ The Mean Absolute Percentage Error (MAPE) is a commonly used metric for evaluati
 The MAPE formula for regression is as follows:
 
 $$
-MAPE = \frac{1}{m} \sum_{i=1}^{m} \left|\frac{y^{(i)} - h_{\theta}(x^{(i)})}{y^{(i)}}\right| \times 100
+MAPE = \frac{1}{m} \sum_{i=1}^{m} \left |\frac{y^{(i)} - h_{\theta}(x^{(i)})}{y^{(i)}}\right | \times 100
 $$
 
 Where:
