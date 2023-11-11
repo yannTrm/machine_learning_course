@@ -89,6 +89,55 @@ class RegressionAlgorithms:
                 theta -= learning_rate * gradient
 
         return theta
+    
+    @staticmethod
+    def mini_batch_gradient_descent(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float = 0.01, batch_size: int = 32, num_iterations: int = 100, verbose: bool = False) -> np.ndarray:
+        """
+        Perform linear regression using Mini-Batch Gradient Descent.
+
+        Args:
+            X (np.ndarray): Input features.
+            y (np.ndarray): Target values.
+            theta (np.ndarray): Initial parameters.
+            learning_rate (float): Learning rate for Mini-Batch GD.
+            batch_size (int): Size of the mini-batch.
+            num_iterations (int): Number of iterations for Mini-Batch GD.
+            verbose (bool): Whether to display information for each epoch.
+
+        Returns:
+            np.ndarray: Learned parameters (theta).
+        """
+        m, _ = X.shape  # Number of training examples and features
+
+        for epoch in range(num_iterations):
+            # Shuffle the data for randomness in mini-batch selection
+            indices = np.random.permutation(m)
+            X_shuffled = X[indices]
+            y_shuffled = y[indices]
+
+            for i in range(0, m, batch_size):
+                # Select a mini-batch
+                mini_batch_X = X_shuffled[i:i + batch_size]
+                mini_batch_y = y_shuffled[i:i + batch_size]
+
+                # Compute predictions for the mini-batch
+                predictions = np.dot(mini_batch_X, theta)
+
+                # Calculate errors for the mini-batch
+                errors = predictions - mini_batch_y
+
+                # Compute gradients for the mini-batch
+                gradients = mini_batch_X.T.dot(errors)
+
+                # Update parameters using gradients and learning rate
+                theta -= learning_rate * gradients
+
+            if verbose:
+                cost = np.mean((np.dot(X, theta) - y) ** 2) / 2
+                print(f"Epoch {epoch + 1}/{num_iterations}, Cost: {cost}")
+
+        return theta
+
 
     @staticmethod
     def momentum(X: np.ndarray, y: np.ndarray, theta: np.ndarray, learning_rate: float = 0.01, num_iterations: int = 100, momentum_factor: float = 0.9) -> np.ndarray:
