@@ -26,6 +26,9 @@ class CostFunctions:
 
         - mape(y_true: np.ndarray, y_pred: np.ndarray) -> float:
             Calculate the Mean Absolute Percentage Error (MAPE) between true and predicted values.
+            
+        - log_loss(y_true: np.ndarray, y_pred: np.ndarray) -> float:
+            Calculate the Log Loss between true and predicted values.
     """
 
     @staticmethod
@@ -93,6 +96,26 @@ class CostFunctions:
         """
         CostFunctions.check_shape(y_true, y_pred)
         return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+    
+    @staticmethod
+    def log_loss(y_true: np.ndarray, A: np.ndarray) -> float:
+        """
+        Calculate the Log Loss between true and predicted values for a perceptron.
+        
+        Args:
+            y_true (np.ndarray): NumPy array of true target values.
+            A (np.ndarray): NumPy array of predicted probabilities (activations) from the perceptron.
+        
+        Returns:
+            float: The computed Log Loss.
+        
+        Note:
+            The input arrays `y_true` and `A` must have the same shape.
+        """
+        epsilon = 1e-15
+        A = np.clip(A, epsilon, 1 - epsilon)
+        return 1 / len(y_true) * np.sum(-y_true * np.log(A) - (1 - y_true) * np.log(1 - A))
+
 
 
 #------------------------------------------------------------------------------

@@ -5,12 +5,17 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
-from sklearn.datasets import make_blobs
-
-from src.linear_classifier.perceptron import Perceptron
+import warnings
 
 
+from sklearn.linear_model import Perceptron as skPerceptron
+from src.perceptron import Perceptron
+from sklearn.datasets import load_iris, make_blobs
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 
+
+warnings.filterwarnings('ignore')
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -18,12 +23,33 @@ from src.linear_classifier.perceptron import Perceptron
 #------------------------------------------------------------------------------
 # Exemple d'utilisation
 
-if __name__=="__main__":
-    X, y = make_blobs(n_samples = 100, n_features = 2, centers = 2, random_state = 0)
-    y = y.reshape((y.shape[0], 1))
+if __name__=="__main__":   
     
-    plt.scatter(X[:, 0], X[:, 1], c = y, cmap = "summer")
-    plt.show()
+    
 
+    # test with real data
+    iris = load_iris()
+    
+    X = iris.data[:, (0, 1)]  # petal length, petal width
+    y = (iris.target == 0).astype(np.int32)
+    y = y.reshape((y.shape[0], 1))
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
+    
+    perceptron = Perceptron(n_iter=10000)
+    perceptron.fit(X_train, y_train, record_loss = True)
+    pred = perceptron.predict(X_test)
+    # Accuracy scores
+    print(f"Accuracy of our perceptron: {accuracy_score(pred, y_test)}")
+
+    plt.figure()
+    perceptron.plot_decision_boundary(X_test, y_test, title="our decision boundaries")
+    
+    losses = perceptron.get_loss_history()
+    
+    plt.figure()
+    plt.plot(losses)
+    
+    
+    
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------

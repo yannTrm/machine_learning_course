@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression as skLinearRegression
 from sklearn.metrics import mean_squared_error
 
-from src.linear_regression.linear_regression import LinearRegression
-from src.linear_regression.utils.regression_algorithms import RegressionAlgorithms
+from src.linear_regression import LinearRegression
+from src.utils.regression_algorithms import RegressionAlgorithms
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------

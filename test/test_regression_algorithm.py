@@ -7,7 +7,7 @@ import numpy as np
 
 from sklearn.linear_model import LinearRegression
 
-from src.linear_regression.utils.regression_algorithms import RegressionAlgorithms
+from src.utils.regression_algorithms import RegressionAlgorithms
 from src.utils.cost_functions import CostFunctions
 
 

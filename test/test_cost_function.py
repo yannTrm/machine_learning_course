@@ -4,7 +4,7 @@
 # Import 
 import numpy as np
 
-from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error, log_loss
 from src.utils.cost_functions import CostFunctions
 
 #------------------------------------------------------------------------------
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     mape_result = CostFunctions.mape(y_true, y_pred)
     
     mse_sklearn = mean_squared_error(y_true, y_pred)
-    mae_sklearn = mean_absolute_error(y_true, y_pred)           
+    mae_sklearn = mean_absolute_error(y_true, y_pred)    
     
     print(f"Custom MSE: {mse_result:.2f}")
     print(f"Custom MAE: {mae_result:.2f}")
@@ -28,6 +28,21 @@ if __name__ == "__main__":
     print(f"Scikit-learn MAE: {mae_sklearn:.2f}")
     print(f"RMSE: {rmse_result:.2f}")
     print(f"MAPE: {mape_result:.2f}%")
+    
+    
+    predicted_probabilities = np.array([0.7, 0.8, 0.9, 0.6, 0.2])
+    actual_labels = np.array([1, 1, 1, 0, 1])  # Binary labels (0 or 1)
+    
+    logloss_result = CostFunctions.log_loss(predicted_probabilities, predicted_probabilities)
+    logloss_sklearn = log_loss(actual_labels, predicted_probabilities)       
+
+
+
+    
+    print(f"Custom log loss: {logloss_result:.2f}")
+    print(f"Scikit-learn log loss: {logloss_sklearn:.2f}%")
+    
+    
    
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------  
