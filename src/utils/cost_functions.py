@@ -98,7 +98,7 @@ class CostFunctions:
         return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
     
     @staticmethod
-    def log_loss(y_true: np.ndarray, A: np.ndarray) -> float:
+    def log_loss(y_true: np.ndarray, A: np.ndarray, epsilon : float = 1e-15) -> float:
         """
         Calculate the Log Loss between true and predicted values for a perceptron.
         
@@ -114,7 +114,7 @@ class CostFunctions:
         """
         epsilon = 1e-15
         A = np.clip(A, epsilon, 1 - epsilon)
-        return 1 / len(y_true) * np.sum(-y_true * np.log(A) - (1 - y_true) * np.log(1 - A))
+        return 1 / len(y_true) * np.sum(-y_true * np.log(A + epsilon) - (1 - y_true) * np.log(1 - A + epsilon))
 
 
 

@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from .utils.activation import Activation
-
+from .utils.cost_functions import CostFunctions
 
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
@@ -129,7 +129,7 @@ class Perceptron:
             if record_loss:
                 
                 A = self.activation(X.dot(self.W) + self.b)
-                loss = np.mean((A - y) ** 2)
+                loss = CostFunctions.log_loss(y, A)
                 self.losses.append(loss)
                 
 
@@ -166,7 +166,7 @@ class Perceptron:
         y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
         xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.1), np.arange(y_min, y_max, 0.1))
         Z = self.predict(np.c_[xx.ravel(), yy.ravel()])
-        Z = Z.reshape(xx.shape)
+        Z = Z.reshape(xx.shape)  
         plt.contour(xx, yy, Z, alpha=0.3, levels=[0], linestyles='dashed', colors='blue', label="Decision Boundary")
         plt.xlabel('Feature 1')
         plt.ylabel('Feature 2')
