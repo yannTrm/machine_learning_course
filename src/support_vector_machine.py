@@ -135,5 +135,73 @@ class SVM:
         ax.legend()
         plt.show()
 
+
+class PegasosSVM(SVM):
+    """
+    Support Vector Machine (SVM) classifier using the Pegasos algorithm.
+    Inherits from the SVM class.
+
+    Parameters:
+    - learning_rate (float): The learning rate for gradient descent. Default is 0.001.
+    - lambda_param (float): Regularization parameter. Default is 0.01.
+    - n_iters (int): Number of iterations for training. Default is 1000.
+
+    Attributes:
+    - lr (float): The learning rate for gradient descent.
+    - lambda_param (float): Regularization parameter.
+    - n_iters (int): Number of iterations for training.
+    - w (numpy.ndarray): Coefficients of the SVM.
+    - b (float): Bias term of the SVM.
+
+    Methods:
+    - fit(X, y): Train the SVM classifier on the given training data using Pegasos algorithm.
+    - predict(X): Make predictions on new data.
+    - score(X, y): Evaluate the accuracy of the model on a given dataset.
+    - plot_svm(X, y): Plot the decision boundary and margins of the SVM.
+
+    """
+    def fit(self, X: np.ndarray, y: np.ndarray, loss: bool = False):
+        """
+        Train the SVM classifier on the given training data using Pegasos algorithm.
+    
+        Parameters:
+        - X (numpy.ndarray): Input features.
+        - y (numpy.ndarray): Target labels.
+        - loss (bool): Whether to record the loss during training. Default is False.
+        """
+        n_samples, n_features = X.shape
+    
+        # Convert labels to -1 for negative class and 1 for positive class
+        y_ = np.where(y <= 0, -1, 1)
+    
+        self.w = np.zeros(n_features)
+        self.b = 0
+    
+        if loss:
+            loss_history = []  # List to store the loss at each iteration
+    
+        for epoch in range(1, self.n_iters + 1):
+            for i in range(n_samples):
+                t = epoch * n_samples + i
+                learning_rate_t = 1.0 / (self.lambda_param * t)
+    
+                condition = y_[i] * (np.dot(X[i], self.w) - self.b) >= 1
+                if condition:
+                    self.w = (1 - learning_rate_t * self.lambda_param) * self.w
+                else:
+                    self.w = (1 - learning_rate_t * self.lambda_param) * self.w + \
+                             learning_rate_t * y_[i] * X[i]
+                    self.b += learning_rate_t * y_[i]
+    
+            if loss:
+                # Compute loss at the end of each epoch
+                hinge_loss = np.maximum(0, 1 - y_ * (np.dot(X, self.w) - self.b))
+                regularization_term = 0.5 * self.lambda_param * np.dot(self.w, self.w)
+                total_loss = np.mean(regularization_term + hinge_loss)
+                loss_history.append(total_loss)
+    
+        if loss:
+            return np.array(loss_history)
+
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
